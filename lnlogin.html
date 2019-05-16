@@ -1,0 +1,56 @@
+<html>
+<head><style>
+body{
+		Background: url("/home.jpg");}
+	h1{ color: #D3D3D3 ;
+		align: left;
+		font-family: sans-serif;
+		font-style: italic;}
+	
+	form {
+		width: 25%;
+		height: 30%;
+		align: center;
+		padding: 12px 20px;
+		box-sizing: border-box;
+		border-style: 10px dottesolid #ccc;
+		border-radius: 4px;
+		background-color: #D3D3D3;
+		}
+</style></head>
+	
+<body>
+	
+<center><h1>Login To Access Files</h1></center><br><br><br>
+	
+<div>
+<center>
+	<form name="form1" align="left" action="lnlogin.php" method="post" onSubmit="return validateForm()">
+		<title align>LOGIN</title>
+		Username:<input type="text" name="mail" value=""><br><br><br>
+		Password:<input type="password" name="Password" value=""><br>
+		<input type="submit" value="Submit">
+	</form>
+</center>
+</div>
+
+</body>
+<script>
+
+function validateForm()
+{	
+	
+	var uname = document.forms["form1"]["mail"].value;
+	var pass = document.forms["form1"]["Password"].value;
+	var regularExpression  = /^[a-zA-Z0-9!@#$%^&*]{6,16}$/;
+		
+	if(uname == "")
+	{	alert("Username must be filled");
+		return false;}
+	if(pass == "")
+	{	alert("Password must be filled");
+		return false;}	
+	return true;
+}
+</script>
+</html>
